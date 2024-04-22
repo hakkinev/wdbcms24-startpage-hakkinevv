@@ -1,6 +1,7 @@
 async function getWeatherData() {
     const apiKey = '2bf199fd9ebdd79cb3063ef01c197cb4';
     const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=Helsinki&appid=${apiKey}`;
+    
     try {
         const resp = await fetch(apiUrl);
         const data = await resp.json();
@@ -25,6 +26,7 @@ async function updateWeatherWidget() {
     } else {
         weatherWidget.innerHTML = '<p>Failed to fetch weather data</p>';
     }
+
 }
 
 window.onload = function () {
